@@ -4,7 +4,8 @@ package pds.baralho;
  *
  * @author Helison Teixeira
  * @author  Bruno Vicelli
- * @version 1.5 @Date 23/04/2012
+ * @version 1.5
+ * @Date 23/04/2012
  * 
  */
 public class Carta {
