@@ -90,7 +90,6 @@ public class Baralho {
 
     /**
      * Retorna a primeira carta do baralho
-     *
      * @return
      *
      */
@@ -115,16 +114,22 @@ public class Baralho {
     }
 
     /**
-     * Remove a carta do baralho principal e o coloca na monte de descarte
+     * Adiciona a carta no monte de descarte.
+     * 
+     * Metodo somente deve ser utilizado caso haja somente uma instanciação do baralho
      *
      * @param carta
      */
-    public void moverParaMonteDeDescarte(Carta carta) {
-        if (baralhoCompleto.contains(carta)) {
+    public boolean moverParaMonteDeDescarte(Carta carta) {
+        if (!baralhoCompleto.contains(carta)) {
             monteDescarte.add(carta);
-            baralhoCompleto.remove(carta);
+            return true;
         }
+        else
+            return false;
     }
+    
+    //CRIAR UM METODO QUE ADICIONA UMA CARTA QUALQUER AO BARALHO SEM TRATAMENTO
 
     /**
      * Retona a carta do monte de descarte na posição escolhida
@@ -132,6 +137,7 @@ public class Baralho {
      * @param posicao
      * @return carta dp
      */
+    
     public Carta visualizarCartaDoMonteDeDescarte(int posicao) {
         return monteDescarte.get(posicao);
     }
@@ -141,16 +147,17 @@ public class Baralho {
      *
      * @return
      */
-    public ArrayList<Carta> visualizarCartasDoMonteDeDescarte() {
+    public ArrayList<Carta> visualizarMonteDeDescarte() {
         return monteDescarte;
     }
+    //CRIAR MAIS UM PARA REmOVER A CARTA DO MONTE DE DESCARTE
 
     /**
      * Metodo de teste para verificar se as funcoes que utilizam o fulldeck
      * realmente estao ocorrendo Como por exemplo, embaralhar, remover carta,
      * mover carta, entre outras
      */
-    public void exibirFullDeck() {
+    public void exibirBaralhoCompleto() {
         for (int i = 0; i < 52; i++) {
             System.out.println("numero: " + baralhoCompleto.get(i).getNumero() + ", naipe: " + baralhoCompleto.get(i).getnaipe());
         }
