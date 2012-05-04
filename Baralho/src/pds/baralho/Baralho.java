@@ -4,23 +4,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * A biblioteca de manipulação de baralho, por padrão o tradicional de 52 cartas
- * sem curingas, que deve fornecer uma representação das cartas e
- * funções/métodos/etc para manipulação das cartas. São esperadas as funções de
- * embaralhar, cortar em duas partes (em uma determinada posição e juntando em
- * um único baralho no final), retirar uma carta do inicio e do final, passar
- * uma carta do inicio para o final (sem mostrar que carta é), e a criação de um
- * monte de descarte do qual podemos ver qualquer carta sem removê-la (no monte
- * de compra uma carta só pode ser vista se for removida dele).
- *
+ * Biblioteca java que trabalha com funcoes de um baralho com 52 cartas.
+ *  *
  * @author Helison Teixeira
  * @author Bruno Vicelli
- * @Version 1.0 @Date 19/04/2012
+ * @Version 1.0 
+ * @Date 19/04/2012
  */
 public class Baralho {
 
-    private ArrayList<Carta> fullDeck = new ArrayList<>();
-    private ArrayList<Carta> discardDeck = new ArrayList<>();
+    private ArrayList<Carta> baralhoCompleto = new ArrayList<>();
+    private ArrayList<Carta> monteDescarte = new ArrayList<>();
 
     /**
      * Construtor do baralho.
@@ -50,7 +44,7 @@ public class Baralho {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 13; j++) {
                 carta = new Carta(naipes.get(i), numeros.get(j));
-              fullDeck.add(carta);
+              baralhoCompleto.add(carta);
                 
             }
         }
@@ -62,12 +56,12 @@ public class Baralho {
      *
      */
     public void embaralhar() {
-        Collections.shuffle(fullDeck);
+        Collections.shuffle(baralhoCompleto);
         //for (int i =0; i<200;i++){
         //Random rand = new Random();
         //Carta carta;
         //int num = rand.nextInt(52);
-        //carta = fullDeck.remove(num);
+        //carta = baralhoCompleto.remove(num);
         //fullDeck.add(carta);
         //  }
 
@@ -82,12 +76,12 @@ public class Baralho {
         ArrayList<Carta> parte2 = new ArrayList<>();
         if (posicao>2){
         for (int i = 0; i < posicao; i++) {
-            parte1.add(fullDeck.remove(i));
+            parte1.add(baralhoCompleto.remove(i));
         }
-        parte2.addAll(fullDeck);
-        fullDeck.clear();
-        fullDeck.addAll(parte2);
-        fullDeck.addAll(parte1);
+        parte2.addAll(baralhoCompleto);
+        baralhoCompleto.clear();
+        baralhoCompleto.addAll(parte2);
+        baralhoCompleto.addAll(parte1);
         return true;
         }
         else
@@ -101,7 +95,7 @@ public class Baralho {
      *
      */
     public Carta getPrimeiraCarta() {
-        return fullDeck.remove(0);
+        return baralhoCompleto.remove(0);
     }
 
     /**
@@ -110,25 +104,25 @@ public class Baralho {
      * @return
      */
     public Carta getUltimaCarta() {
-        return fullDeck.remove(fullDeck.lastIndexOf(this));
+        return baralhoCompleto.remove(baralhoCompleto.lastIndexOf(this));
     }
 
     /**
      * Move a primeira carta do baralho para o final.
      */
     public void moverPrimeiraParaOFim() {        
-        fullDeck.add(fullDeck.remove(0));
+        baralhoCompleto.add(baralhoCompleto.remove(0));
     }
 
     /**
      * Remove a carta do baralho principal e o coloca na monte de descarte
      *
-     * @param card
+     * @param carta
      */
-    public void moverParaMonteDeDescarte(Carta card) {
-        if (fullDeck.contains(card)) {
-            discardDeck.add(card);
-            fullDeck.remove(card);
+    public void moverParaMonteDeDescarte(Carta carta) {
+        if (baralhoCompleto.contains(carta)) {
+            monteDescarte.add(carta);
+            baralhoCompleto.remove(carta);
         }
     }
 
@@ -139,7 +133,7 @@ public class Baralho {
      * @return carta dp
      */
     public Carta visualizarCartaDoMonteDeDescarte(int posicao) {
-        return discardDeck.get(posicao);
+        return monteDescarte.get(posicao);
     }
 
     /**
@@ -148,7 +142,7 @@ public class Baralho {
      * @return
      */
     public ArrayList<Carta> visualizarCartasDoMonteDeDescarte() {
-        return discardDeck;
+        return monteDescarte;
     }
 
     /**
@@ -158,7 +152,7 @@ public class Baralho {
      */
     public void exibirFullDeck() {
         for (int i = 0; i < 52; i++) {
-            System.out.println("numero: " + fullDeck.get(i).getNumero() + ", naipe: " + fullDeck.get(i).getnaipe());
+            System.out.println("numero: " + baralhoCompleto.get(i).getNumero() + ", naipe: " + baralhoCompleto.get(i).getnaipe());
         }
     }
 }
