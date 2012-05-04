@@ -23,7 +23,8 @@ public class Carta {
     }
 /**
  * Construtor da classe Carta que passa somente o naipe como parametro.
- * @param naipe 
+ * @param naipe
+ * @deprecated 
  */
     public Carta(String naipe) {
         this.naipe = naipe;
