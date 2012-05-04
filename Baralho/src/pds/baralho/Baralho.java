@@ -21,7 +21,6 @@ public class Baralho {
 
     private ArrayList<Carta> fullDeck = new ArrayList<>();
     private ArrayList<Carta> discardDeck = new ArrayList<>();
-    private ArrayList<Carta> buyDeck = new ArrayList<>();
 
     /**
      * Construtor do baralho.
@@ -51,8 +50,7 @@ public class Baralho {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 13; j++) {
                 carta = new Carta(naipes.get(i), numeros.get(j));
-                //System.out.println("numero da carta: "+numeros.get(j)+", naipe:"+naipes.get(i));
-                fullDeck.add(carta);
+              fullDeck.add(carta);
                 
             }
         }
@@ -79,9 +77,10 @@ public class Baralho {
      * Corta o Baralho na posicao informada pelo usuario e o remonta
      * @param posicao
      */
-    public void cortar(int posicao) {
+    public boolean cortar(int posicao) {
         ArrayList<Carta> parte1 = new ArrayList<>();
         ArrayList<Carta> parte2 = new ArrayList<>();
+        if (posicao>2){
         for (int i = 0; i < posicao; i++) {
             parte1.add(fullDeck.remove(i));
         }
@@ -89,6 +88,10 @@ public class Baralho {
         fullDeck.clear();
         fullDeck.addAll(parte2);
         fullDeck.addAll(parte1);
+        return true;
+        }
+        else
+            return false;
     }
 
     /**
