@@ -1,0 +1,16 @@
+Trabalho: Biblioteca e aplicação de cartas
+Disciplina: Práticas de desenvolvimento de Software 01/2012
+
+--Autores--
+
+Bruno Vicelli - 
+email: brunodosax@hotmail.com
+
+
+Helison Reus Teixeira - 
+email: helisonreus@gmail.com
+
+
+Discentes do Curso de Engenharia de Software
+Universidade Federal do Pampa - Unipampa
+
