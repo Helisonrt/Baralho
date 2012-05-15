@@ -146,16 +146,6 @@ public class Baralho {
     }
 
     /**
-     * Metodo de teste para verificar se as funcoes que utilizam o fulldeck
-     * realmente estao ocorrendo Como por exemplo, embaralhar, remover carta,
-     * mover carta, entre outras
-     */
-    public void exibirBaralhoCompleto() {
-        for (int i = 0; i < 52; i++) {
-            System.out.println("numero: " + baralhoCompleto.get(i).getNumero() + ", naipe: " + baralhoCompleto.get(i).getnaipe());
-        }
-    }
-    /**
      * Verifica se a carta está no baralho
      * @param carta
      * @return 
@@ -171,4 +161,15 @@ public class Baralho {
         }
         return false;
     }
+        /**
+     * Metodo de teste para verificar se as funcoes que utilizam o baralho completo
+     * realmente estao ocorrendo Como por exemplo, embaralhar, remover carta,
+     * mover carta, entre outras
+     */
+    public void exibirBaralhoCompleto() {
+        for (int i = 0; i < 52; i++) {
+            System.out.println("numero: " + baralhoCompleto.get(i).getNumero() + ", naipe: " + baralhoCompleto.get(i).getnaipe());
+        }
+    }
+
 }

@@ -146,4 +146,14 @@ public class MonteDescarte {
         }
         return false;
     }
+        /**
+     * Metodo de teste para verificar se as funcoes que utilizam o monte de descarte
+     * realmente estao ocorrendo.
+     */
+    public void exibirMonteDescarte() {
+        for (int i = 0; i < 52; i++) {
+            System.out.println("numero: " + monteDescarte.get(i).getNumero() + ", naipe: " + monteDescarte.get(i).getnaipe());
+        }
+    }
+
 }
