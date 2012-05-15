@@ -155,7 +155,11 @@ public class Baralho {
             System.out.println("numero: " + baralhoCompleto.get(i).getNumero() + ", naipe: " + baralhoCompleto.get(i).getnaipe());
         }
     }
-
+    /**
+     * Verifica se a carta está no baralho
+     * @param carta
+     * @return 
+     */
     boolean estaNoBaralho(Carta carta) {
 
         for (int i = 0; i <= baralhoCompleto.size(); i++) {
