@@ -82,6 +82,7 @@ public class Baralho {
      * Corta o Baralho na posicao informada pelo usuario e o remonta
      *
      * @param posicao
+     * @return true se possível cortar, false caso nao seja possível
      */
     public boolean cortar(int posicao) {
         ArrayList<Carta> parte1 = new ArrayList<>();

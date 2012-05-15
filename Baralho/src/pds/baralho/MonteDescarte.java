@@ -21,6 +21,7 @@ public class MonteDescarte {
      * baralho
      *
      * @param carta
+     * @return true caso seja possivel mover, false caso nao seja possivel
      */
     public boolean moverParaMonteDeDescarte(Carta carta) {
 
