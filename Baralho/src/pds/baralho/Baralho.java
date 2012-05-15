@@ -35,10 +35,10 @@ public class Baralho {
         numeros.add("J");
         numeros.add("Q");
         numeros.add("K");
-        naipes.add("Copas");
-        naipes.add("Ouro");
-        naipes.add("Espada");
-        naipes.add("Paus");
+        naipes.add("COPAS");
+        naipes.add("OURO");
+        naipes.add("ESPADA");
+        naipes.add("PAUS");
         Carta carta;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 13; j++) {
@@ -47,7 +47,6 @@ public class Baralho {
 
             }
         }
-
     }
 
     /**
@@ -72,7 +71,7 @@ public class Baralho {
         for (int i = 0; i < voltas; i++) {
             Random rand = new Random();
             Carta carta;
-            int num = rand.nextInt(51);
+            int num = rand.nextInt(50);
             carta = baralhoCompleto.remove(num);
             baralhoCompleto.add(carta);
         }
@@ -89,7 +88,8 @@ public class Baralho {
         ArrayList<Carta> parte2 = new ArrayList<>();
         if (posicao > 2) {
             for (int i = 0; i < posicao; i++) {
-                parte1.add(baralhoCompleto.remove(i));
+                Carta carta = baralhoCompleto.remove(i);
+                parte1.add(carta);
             }
             parte2.addAll(baralhoCompleto);
             baralhoCompleto.clear();
@@ -117,7 +117,8 @@ public class Baralho {
      * @return
      */
     public Carta getUltimaCarta() {
-        return baralhoCompleto.remove(baralhoCompleto.lastIndexOf(this));
+        
+        return baralhoCompleto.get(baralhoCompleto.size()-1);
     }
 
     /**
@@ -136,8 +137,9 @@ public class Baralho {
      * @return
      */
     public boolean estaNoBaralho(String naipe, String numero) {
+       String naipeUpper = naipe.toUpperCase();
         for (int i = 0; i <= baralhoCompleto.size(); i++) {
-            if (baralhoCompleto.get(i).getnaipe().equals("naipe") && baralhoCompleto.get(i).getNumero().equals("numero")) {
+            if (baralhoCompleto.get(i).getnaipe().equals(naipeUpper) && baralhoCompleto.get(i).getNumero().equals(numero)) {
                 return true;
             } else {
                 return false;
@@ -148,13 +150,14 @@ public class Baralho {
 
     /**
      * Verifica se a carta está no baralho
+     *
      * @param carta
-     * @return 
+     * @return
      */
     boolean estaNoBaralho(Carta carta) {
-
+       String naipeUpper = carta.getnaipe().toUpperCase();
         for (int i = 0; i <= baralhoCompleto.size(); i++) {
-            if (baralhoCompleto.get(i).getnaipe().equals(carta.getnaipe()) && baralhoCompleto.get(i).getNumero().equals(carta.getNumero())) {
+            if (baralhoCompleto.get(i).getnaipe().equals(naipeUpper) && baralhoCompleto.get(i).getNumero().equals(carta.getNumero())) {
                 return true;
             } else {
                 return false;
@@ -162,15 +165,15 @@ public class Baralho {
         }
         return false;
     }
-        /**
-     * Metodo de teste para verificar se as funcoes que utilizam o baralho completo
-     * realmente estao ocorrendo Como por exemplo, embaralhar, remover carta,
-     * mover carta, entre outras
+
+    /**
+     * Metodo de teste para verificar se as funcoes que utilizam o baralho
+     * completo realmente estao ocorrendo Como por exemplo, embaralhar, remover
+     * carta, mover carta, entre outras
      */
     public void exibirBaralhoCompleto() {
-        for (int i = 0; i < 52; i++) {
+        for (int i = 0; i < baralhoCompleto.size(); i++) {
             System.out.println("numero: " + baralhoCompleto.get(i).getNumero() + ", naipe: " + baralhoCompleto.get(i).getnaipe());
         }
     }
-
 }

@@ -15,52 +15,12 @@ public class MonteDescarte {
     private ArrayList<Carta> monteDescarte = new ArrayList<>();
 
     /**
-     * Adiciona a carta no monte de descarte.
-     *
-     * Metodo somente deve ser utilizado caso haja somente uma instanciação do
-     * baralho
-     *
-     * @param carta
-     * @return true caso seja possivel mover, false caso nao seja possivel
-     */
-    public boolean moverParaMonteDeDescarte(Carta carta) {
-
-        Baralho baralho = new Baralho();
-
-        if (baralho.estaNoBaralho(carta)) {
-            monteDescarte.add(carta);
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * Metodo que verifica se a carta existe no baralho através de seu naipe e
-     * numero, e o envia para o monte de descarte
-     *
-     * @param naipe
-     * @param numero
-     * @return
-     */
-    public boolean moverParaMonteDeDescarte(String naipe, String numero) {
-        Baralho baralho = new Baralho();
-
-        Carta carta = new Carta(naipe, numero);
-        if (baralho.estaNoBaralho(naipe, numero)) {
-            monteDescarte.add(carta);
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    /**
      * Adiciona uma carta qualquer no monte de descarte
      *
      * @param carta
      */
-    public void moverParaMonteDeDescarteSemTratamento(Carta carta) {
+    public void moverParaMonteDeDescarte(Carta carta) {
+        carta.setnaipe(carta.getnaipe().toUpperCase());
         monteDescarte.add(carta);
     }
 
@@ -71,8 +31,10 @@ public class MonteDescarte {
      * @param naipe
      * @param numero
      */
-    public void moverParaMonteDeDescarteSemTratamento(String naipe, String numero) {
-        Carta carta = new Carta(naipe, numero);
+    public void moverParaMonteDeDescarte(String naipe, String numero) {
+        String naipeUpper = naipe.toUpperCase();
+        //naipe.toUpperCase();
+        Carta carta = new Carta(naipeUpper, numero);
         monteDescarte.add(carta);
     }
 
@@ -82,7 +44,7 @@ public class MonteDescarte {
      * @param posicao
      * @return carta dp
      */
-    public Carta visualizarCartaDoMonteDeDescarte(int posicao) {
+    public Carta retornarCartaDoMonteDeDescarte(int posicao) {
         return monteDescarte.get(posicao);
     }
 
@@ -91,10 +53,9 @@ public class MonteDescarte {
      *
      * @return
      */
-    public ArrayList<Carta> visualizarMonteDeDescarte() {
+    public ArrayList<Carta> retornarMonteDeDescarte() {
         return monteDescarte;
     }
-    //CRIAR MAIS UM PARA REmOVER A CARTA DO MONTE DE DESCARTE
 
     /**
      * Remover uma carta do monte de descarte passando o objeto carta como
@@ -104,8 +65,9 @@ public class MonteDescarte {
      * @return
      */
     public Carta removeDoMonteDeDescarte(Carta carta) {
+        carta.getnaipe().toUpperCase();
         for (int i = 0; i <= monteDescarte.size(); i++) {
-            if (monteDescarte.contains(i)) {
+            if (monteDescarte.contains(carta)) {
                 carta = monteDescarte.remove(i);
             }
         }
@@ -121,8 +83,9 @@ public class MonteDescarte {
      */
     public Carta removeDoMonteDeDescarte(String naipe, String numero) {
         Carta carta = null;
+        String naipeUpper = naipe.toUpperCase();
         for (int i = 0; i <= monteDescarte.size(); i++) {
-            if (monteDescarte.get(i).getnaipe().equals("naipe") && monteDescarte.get(i).getNumero().equals("numero")) {
+            if (monteDescarte.get(i).getnaipe().equals(naipeUpper) && monteDescarte.get(i).getNumero().equals(numero)) {
                 carta = monteDescarte.remove(i);
             }
         }
@@ -138,8 +101,9 @@ public class MonteDescarte {
      * @return
      */
     public boolean estaNoMonteDescarte(String naipe, String numero) {
+        naipe.toUpperCase();
         for (int i = 0; i <= monteDescarte.size(); i++) {
-            if (monteDescarte.get(i).getnaipe().equals("naipe") && monteDescarte.get(i).getNumero().equals("numero")) {
+            if (monteDescarte.get(i).getnaipe().equals(naipe) && monteDescarte.get(i).getNumero().equals(numero)) {
                 return true;
             } else {
                 return false;
@@ -147,14 +111,14 @@ public class MonteDescarte {
         }
         return false;
     }
-        /**
-     * Metodo de teste para verificar se as funcoes que utilizam o monte de descarte
-     * realmente estao ocorrendo.
+
+    /**
+     * Metodo de teste para verificar se as funcoes que utilizam o monte de
+     * descarte realmente estao ocorrendo.
      */
     public void exibirMonteDescarte() {
-        for (int i = 0; i < 52; i++) {
+        for (int i = 0; i <= monteDescarte.size()-1; i++) {
             System.out.println("numero: " + monteDescarte.get(i).getNumero() + ", naipe: " + monteDescarte.get(i).getnaipe());
         }
     }
-
 }
