@@ -19,7 +19,7 @@ public class Carta {
      * @param numero
      */
     public Carta(String naipe, String numero) {
-        
+
         this.naipe = naipe.toUpperCase();
         this.numero = numero;
     }
@@ -48,7 +48,7 @@ public class Carta {
      * @param naipe
      */
     public void setnaipe(String naipe) {
-        
+
         this.naipe = naipe.toUpperCase();
     }
 
@@ -57,7 +57,7 @@ public class Carta {
      *
      * @param numero
      */
-    public void setNumero(String numero) {  
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 }

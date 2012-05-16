@@ -117,8 +117,8 @@ public class Baralho {
      * @return
      */
     public Carta getUltimaCarta() {
-        
-        return baralhoCompleto.get(baralhoCompleto.size()-1);
+
+        return baralhoCompleto.get(baralhoCompleto.size() - 1);
     }
 
     /**
@@ -137,7 +137,7 @@ public class Baralho {
      * @return
      */
     public boolean estaNoBaralho(String naipe, String numero) {
-       String naipeUpper = naipe.toUpperCase();
+        String naipeUpper = naipe.toUpperCase();
         for (int i = 0; i <= baralhoCompleto.size(); i++) {
             if (baralhoCompleto.get(i).getnaipe().equals(naipeUpper) && baralhoCompleto.get(i).getNumero().equals(numero)) {
                 return true;
@@ -155,7 +155,7 @@ public class Baralho {
      * @return
      */
     boolean estaNoBaralho(Carta carta) {
-       String naipeUpper = carta.getnaipe().toUpperCase();
+        String naipeUpper = carta.getnaipe().toUpperCase();
         for (int i = 0; i <= baralhoCompleto.size(); i++) {
             if (baralhoCompleto.get(i).getnaipe().equals(naipeUpper) && baralhoCompleto.get(i).getNumero().equals(carta.getNumero())) {
                 return true;

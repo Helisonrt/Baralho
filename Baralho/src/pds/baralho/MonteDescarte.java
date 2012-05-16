@@ -8,7 +8,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Helison
+ * @author Helison Teixeira
+ * @author Bruno Vicelli
+ * @Version 1.0 @Date 14/05/2012
  */
 public class MonteDescarte {
 
@@ -117,7 +119,7 @@ public class MonteDescarte {
      * descarte realmente estao ocorrendo.
      */
     public void exibirMonteDescarte() {
-        for (int i = 0; i <= monteDescarte.size()-1; i++) {
+        for (int i = 0; i <= monteDescarte.size() - 1; i++) {
             System.out.println("numero: " + monteDescarte.get(i).getNumero() + ", naipe: " + monteDescarte.get(i).getnaipe());
         }
     }
