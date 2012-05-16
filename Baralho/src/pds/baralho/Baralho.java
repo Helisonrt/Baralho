@@ -1,3 +1,15 @@
+/**
+ * <copyright>
+ * 
+ * Copyright 2012 Burno Vicelli <brunodosax@hotmail.com>
+ * Copyright 2012 Helison Teixeira <helisonreus@gmail.com>
+ * 
+ * Este programa e todos os materiais que o acompanham estão disponibilizados
+ * sob a licença GPL versão 3, que acompanha esta distribuição e está disponível
+ * em http://www.gnu.org/licenses/gpl.html
+ * </copyright>
+ */
+
 package pds.baralho;
 
 import java.util.ArrayList;
@@ -7,7 +19,11 @@ import java.util.Random;
 /**
  * Biblioteca java que trabalha com funcoes de um baralho com 52 cartas.
  *
- *
+ * Universidade Federal do Pampa
+ * Graduação: Engenharia de Software
+ * Disciplina: Práticas de Desenvolvimento de Software
+ * Professor: Wagner de Melo Reck
+ * Semestre: 5° - 2012/01 
  * @author Helison Teixeira
  * @author Bruno Vicelli
  * @Version 1.0 @Date 19/04/2012

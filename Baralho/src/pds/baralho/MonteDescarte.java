@@ -1,13 +1,27 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * <copyright>
+ * 
+ * Copyright 2012 Burno Vicelli <brunodosax@hotmail.com>
+ * Copyright 2012 Helison Teixeira <helisonreus@gmail.com>
+ * 
+ * Este programa e todos os materiais que o acompanham estão disponibilizados
+ * sob a licença GPL versão 3, que acompanha esta distribuição e está disponível
+ * em http://www.gnu.org/licenses/gpl.html
+ * </copyright>
  */
+
 package pds.baralho;
 
 import java.util.ArrayList;
 
 /**
- *
+ * Classe que cria o monte de descarte de baralho 
+ * 
+ * Universidade Federal do Pampa 
+ * Graduação: Engenharia de Software
+ * Disciplina: Práticas de Desenvolvimento de Software
+ * Professor: Wagner de Melo Reck
+ * Semestre: 5° - 2012/01
  * @author Helison Teixeira
  * @author Bruno Vicelli
  * @Version 1.0 @Date 14/05/2012
