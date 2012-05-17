@@ -24,7 +24,7 @@ Uma classe MonteDeDescarte contendo um ArrayList de Carta e as funções para ma
 
 INSTRUÇÕES PARA COMPILAR A BIBLIOTECA
 
-Navegar até a pasta onde se encontra o arquivo pom.xml
+Navegar até a pasta do projeto onde se encontra o arquivo pom.xml
 
 Executar o comando "mvn clean install" pelo cmd ou terminald do sistema
 
