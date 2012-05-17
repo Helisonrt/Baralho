@@ -1,74 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- You may freely edit this file. See commented blocks below for -->
-<!-- some examples of how to customize the build. -->
-<!-- (If you delete it and reopen the project it will be recreated.) -->
-<!-- By default, only the Clean and Build commands use this build script. -->
-<!-- Commands such as Run, Debug, and Test only use this build script if -->
-<!-- the Compile on Save feature is turned off for the project. -->
-<!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
-<!-- in the project's Project Properties dialog box.-->
-<project name="Baralho" default="default" basedir=".">
-    <description>Builds, tests, and runs the project Baralho.</description>
-    <import file="nbproject/build-impl.xml"/>
-    <!--
+<project name="baralho" default="javadoc" basedir=".">
 
-    There exist several targets which are by default empty and which can be 
-    used for execution of your tasks. These targets are usually executed 
-    before and after some main targets. They are: 
+	<property name="src.dir" value="."/>
+	<property name="build.dir" value="build"/>
+	<property name="classes.dir" value="classes"/>
 
-      -pre-init:                 called before initialization of project properties
-      -post-init:                called after initialization of project properties
-      -pre-compile:              called before javac compilation
-      -post-compile:             called after javac compilation
-      -pre-compile-single:       called before javac compilation of single file
-      -post-compile-single:      called after javac compilation of single file
-      -pre-compile-test:         called before javac compilation of JUnit tests
-      -post-compile-test:        called after javac compilation of JUnit tests
-      -pre-compile-test-single:  called before javac compilation of single JUnit test
-      -post-compile-test-single: called after javac compilation of single JUunit test
-      -pre-jar:                  called before JAR building
-      -post-jar:                 called after JAR building
-      -post-clean:               called after cleaning build products
+	<target name="init">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${classes.dir}"/>
+	</target>
 
-    (Targets beginning with '-' are not intended to be called on their own.)
+	<target name="compile" depends="init" description="Compila os fontes">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}">
+		<classpath>
+			<pathelement location="${build.dir}" />
+		</classpath>
+		</javac>
+	</target>
 
-    Example of inserting an obfuscator after compilation could look like this:
+	<target name="jar" depends="compile" description="Gera arquivo Jar">
+		<jar destfile="${build.dir}/apicartas.jar">
+			<fileset dir="${classes.dir}"/>
+		</jar>
+	</target>
+	
+	<target name="del" depends="jar" description="Apaga pasta das classes">
+		<delete dir="${classes.dir}"/>
+	</target>
+	
+	<target name="javadoc" depends="del" description="Cria o javadoc">
+		<javadoc packagenames="pds*"
+				sourcepath="src"
+				defaultexcludes="yes"
+				destdir="docs/api"
+				author="true"
+				version="true"
+				use="true"
+				encoding="UTF-8"
+				charset="UTF-8" 
+				docencoding="UTF-8"
+				windowtitle="API Cartas">
+			<doctitle><![CDATA[<h1>Api Cartas</h1>]]></doctitle>
+			<bottom><![CDATA[<i>Copyright GPL <Bruno Vicelli> <Helison Teixeira></i>]]></bottom>
+			<tag name="todo" scope="all" description="To do:"/>
+			<group title="Group 1 Packages" packages="com.dummy.test.a*"/>
+			<group title="Group 2 Packages" packages="com.dummy.test.b*:com.dummy.test.c*"/>
+			<link offline="true" href="http://download.oracle.com/javase/6/docs/api/" packagelistLoc="C:\tmp"/>
+			<link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/>
+		</javadoc>
+	</target>
 
-        <target name="-post-compile">
-            <obfuscate>
-                <fileset dir="${build.classes.dir}"/>
-            </obfuscate>
-        </target>
-
-    For list of available properties check the imported 
-    nbproject/build-impl.xml file. 
-
-
-    Another way to customize the build is by overriding existing main targets.
-    The targets of interest are: 
-
-      -init-macrodef-javac:     defines macro for javac compilation
-      -init-macrodef-junit:     defines macro for junit execution
-      -init-macrodef-debug:     defines macro for class debugging
-      -init-macrodef-java:      defines macro for class execution
-      -do-jar-with-manifest:    JAR building (if you are using a manifest)
-      -do-jar-without-manifest: JAR building (if you are not using a manifest)
-      run:                      execution of project 
-      -javadoc-build:           Javadoc generation
-      test-report:              JUnit report generation
-
-    An example of overriding the target for project execution could look like this:
-
-        <target name="run" depends="Baralho-impl.jar">
-            <exec dir="bin" executable="launcher.exe">
-                <arg file="${dist.jar}"/>
-            </exec>
-        </target>
-
-    Notice that the overridden target depends on the jar target and not only on 
-    the compile target as the regular run target does. Again, for a list of available 
-    properties which you can use, check the target you are overriding in the
-    nbproject/build-impl.xml file. 
-
-    -->
 </project>

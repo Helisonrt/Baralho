@@ -28,7 +28,7 @@ import java.util.ArrayList;
  */
 public class MonteDescarte {
 
-    private ArrayList<Carta> monteDescarte = new ArrayList<>();
+    private ArrayList<Carta> monteDescarte = new ArrayList<Carta>();
 
     /**
      * Adiciona uma carta qualquer no monte de descarte

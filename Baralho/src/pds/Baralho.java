@@ -30,14 +30,14 @@ import java.util.Random;
  */
 public class Baralho {
 
-    private ArrayList<Carta> baralhoCompleto = new ArrayList<>();
+    private ArrayList<Carta> baralhoCompleto = new ArrayList<Carta>();
 
     /**
      * Construtor do baralho. Cria um baralho com 52 cartas, sem curinga.
      */
     public Baralho() {
-        ArrayList<String> numeros = new ArrayList<>();
-        ArrayList<String> naipes = new ArrayList<>();
+        ArrayList<String> numeros = new ArrayList<String>();
+        ArrayList<String> naipes = new ArrayList<String>();
         numeros.add("A");
         numeros.add("2");
         numeros.add("3");
@@ -100,8 +100,8 @@ public class Baralho {
      * @return true se possível cortar, false caso nao seja possível
      */
     public boolean cortar(int posicao) {
-        ArrayList<Carta> parte1 = new ArrayList<>();
-        ArrayList<Carta> parte2 = new ArrayList<>();
+        ArrayList<Carta> parte1 = new ArrayList<Carta>();
+        ArrayList<Carta> parte2 = new ArrayList<Carta>();
         if (posicao > 2) {
             for (int i = 0; i < posicao; i++) {
                 Carta carta = baralhoCompleto.remove(i);
