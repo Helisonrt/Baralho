@@ -8,7 +8,7 @@ A biblioteca de manipulação de baralho, por padrão o tradicional de 52 cartas
 
 REQUISITOS PARA A COMPILAÇÃO
 
-Maven corretamente instalado
+Ant corretamente instalado
 JDK
 Conexão com a internet
 
@@ -24,12 +24,12 @@ Uma classe MonteDeDescarte contendo um ArrayList de Carta e as funções para ma
 
 INSTRUÇÕES PARA COMPILAR A BIBLIOTECA
 
-Navegar até a pasta do projeto onde se encontra o arquivo pom.xml
+Navegar até a pasta do projeto onde se encontra o arquivo build.xml
 
-Executar o comando "mvn clean install" pelo cmd ou terminald do sistema
+Executar o comando "ant" pelo cmd ou terminald do sistema
 
 Aguardar o final da execução do comando.
 
-Após a compilação do código, será criada uma pasta chamada "target" no diretório onde se encontra o arquivo pom.xml, dentro desta pasta estará o arquivo .jar referente a biblioteca compilada
+Será criada uma pasta chamada doc contendo o javadoc da api e uma pasta dist contendo o executável
 
 Para usar a biblioteca basta importá-la no seu projeto seguindo as orientações da sua IDE.
