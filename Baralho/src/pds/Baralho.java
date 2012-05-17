@@ -10,7 +10,7 @@
  * </copyright>
  */
 
-package pds.baralho;
+package pds;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -10,7 +10,7 @@
  * </copyright>
  */
 
-package pds.baralho;
+package pds;
 
 /**
  * Classe que cria a estrutura de carta de baralho 
