@@ -1,7 +1,25 @@
-Biblioteca para manipulação de cartas de um Baralho
+Biblioteca para manipulaÃ§Ã£o de cartas de um Baralho
 
-VISÃO GERAL
+VISÃƒO GERAL
 
-A biblioteca de manipulação de baralho, por padrão o tradicional de 52 cartas sem curingas, que  fornece uma representação das cartas e funções/métodos/etc para manipulação das cartas. São definidas as funções de  embaralhar, cortar em duas partes (em uma determinada posição e juntando em um único baralho no final), retirar uma carta do inicio e do final, passar uma carta do inicio para o final (sem mostrar que carta é), e a criação de um monte de descarte do qual podemos ver qualquer carta sem removê-la (no monte de compra uma carta só pode ser vista se for removida dele).
+A biblioteca de manipulaÃ§Ã£o de baralho, por padrÃ£o o tradicional de 52 cartas sem curingas, que fornece uma representaÃ§Ã£o das cartas e funÃ§Ãµes/mÃ©todos/etc para manipulaÃ§Ã£o das cartas. SÃ£o definidas as funÃ§Ãµes de embaralhar, cortar em duas partes (em uma determinada posiÃ§Ã£o e juntando em um Ãºnico baralho no final), retirar uma carta do inicio e do final, passar uma carta do inicio para o final (sem mostrar que carta Ã©), e a criaÃ§Ã£o de um monte de descarte do qual podemos ver qualquer carta sem removÃª-la (no monte de compra uma carta sÃ³ pode ser vista se for removida dele).
 
-Para a construção da biblioteca foi utilizado o Apache Maven, ou simplesmente Maven, que é uma ferramenta para gerenciamento e automação de projetos em Java. Ela é similar à ferramenta Ant, mas possui um modelo de configuração mais simples, baseado no formato XML. Maven utiliza uma construção conhecida como Project Object Model (POM), que descreve todo o processo de construção de um projeto de software, suas dependências em outros módulos e componentes e a sua sequência de construção. O Maven contém tarefas pré-definidas que realizam funções bem conhecidas como compilação e empacotamento de código.
+REQUISITOS PARA A COMPILAÃ‡ÃƒO
+
+Ant corretamente instalado JDK ConexÃ£o com a internet
+
+CONTEÃšDO DA BIBLIOTECA
+
+Uma classe Carta contendo o naipe e o numero da carta no formato de String Uma classe Baralho contendo um ArrayList de Carta e as funÃ§Ãµes para manipular o baralho Uma classe MonteDeDescarte contendo um ArrayList de Carta e as funÃ§Ãµes para manipular o monte de descarte
+
+INSTRUÃ‡Ã•ES PARA COMPILAR A BIBLIOTECA
+
+Navegar atÃ© a pasta do projeto onde se encontra o arquivo build.xml
+
+Executar o comando "ant" pelo cmd ou terminald do sistema
+
+Aguardar o final da execuÃ§Ã£o do comando.
+
+SerÃ¡ criada uma pasta chamada doc contendo o javadoc da api e uma pasta dist contendo o executÃ¡vel
+
+Para usar a biblioteca basta importÃ¡-la no seu projeto seguindo as orientaÃ§Ãµes da sua IDE.
