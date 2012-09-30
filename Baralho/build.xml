@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="baralho" default="javadoc" basedir=".">
 
-	<property name="src.dir" value="."/>
+	<property name="src.dir" value="src"/>
 	<property name="build.dir" value="build"/>
 	<property name="classes.dir" value="classes"/>
 
