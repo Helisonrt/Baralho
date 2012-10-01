@@ -192,4 +192,12 @@ public class Baralho {
             System.out.println("numero: " + baralhoCompleto.get(i).getNumero() + ", naipe: " + baralhoCompleto.get(i).getnaipe());
         }
     }
+    public ArrayList<Carta> getBaralhoCompleto() {
+        return baralhoCompleto;
+    }
+
+    public void setBaralhoCompleto(ArrayList<Carta> baralhoCompleto) {
+        this.baralhoCompleto = baralhoCompleto;
+    }
+
 }
